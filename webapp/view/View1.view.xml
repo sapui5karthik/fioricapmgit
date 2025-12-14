@@ -25,7 +25,7 @@
                 />
                 <Text
                     id="idtxt1"
-                    text=""
+                    text="hello"
                 />
                 <Panel
                     id="empPanel"
