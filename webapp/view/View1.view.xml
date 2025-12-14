@@ -1,0 +1,64 @@
+<mvc:View
+    controllerName="productslist.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns:layout="sap.ui.layout"
+    xmlns:core="sap.ui.core"
+    xmlns="sap.m"
+>
+    <Page
+        id="productDetailPage"
+        title="Product Detail"
+        showNavButton="true"
+        navButtonPress="onNavBack"
+    >
+        <content>
+        <core:Fragment fragmentName="productslist.fragments.header" type="XML" />
+        <ComboBox id="comboid" items="{bp>/}">
+    <core:Item key="{bp>ProductID}" text="{bp>ProductID}" />
+</ComboBox>
+
+            <VBox>
+                <Button
+                    text='Refresh'
+                    press="onInit"
+                />
+                <Text
+                    id="idtxt1"
+                    text=""
+                />
+                <Panel
+                    id="empPanel"
+                    headerText="Product Info"
+                   
+                >
+                    <Text text="{p>ProductID}" />
+                    <Text text="{p>TypeCode}" />
+                </Panel>
+            </VBox>
+            <Table
+                items="{path:'bp>/'}"
+                growing="true"
+                growingScrollToLoad="false"
+                growingThreshold="10"
+            >
+                <columns>
+                    <Column>
+                        <Text text="ProductID" />
+                    </Column>
+                    <Column>
+                        <Text text="Price" />
+                    </Column>
+                </columns>
+                <items>
+                    <ColumnListItem>
+                        <cells>
+                            <Text text="{bp>ProductID}" />
+                            <Text text="{bp>Price}" />
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+        </content>
+    </Page>
+</mvc:View>
